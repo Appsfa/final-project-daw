@@ -7,7 +7,6 @@ const Router = EmberRouter.extend({
 });
 
 Router.map(function() {
-  this.route('games');
   this.route('app', {path: '/'}, function() {
     this.route('games');
   });

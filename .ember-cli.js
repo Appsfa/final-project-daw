@@ -10,4 +10,5 @@ module.exports = {
     Setting `disableAnalytics` to true will prevent any data from being sent.
   */
   "disableAnalytics": false
+  // "proxy": "https://polar-basin-61192.herokuapp.com"
 }

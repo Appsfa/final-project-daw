@@ -4,9 +4,10 @@ const { Model, attr, hasMany } = DS;
 export default class GameModel extends Model {
   @attr('string') code;
   @attr('string') status;
-  @attr('string') winner_id;
+  @attr('number') total_users;
+  @attr('number') winner_id;
   @attr('string') winner_name;
-  @attr('string') total_users;
+  @attr('number') total_users;
   @hasMany('play') play;
 }
 

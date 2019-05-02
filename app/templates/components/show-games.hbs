@@ -1,0 +1,17 @@
+
+{{#each this.game as |game|}}
+
+		<tr>
+      <td>{{game.code}}</td>
+      <td>{{game.status}}</td>
+      <td>{{game.total_users}}</td>
+      <td class="d-flex justify-content-center"><button class="btn btn-success d-flex">Play! {{material-icon "play_arrow"}}</button></td>
+    </tr>
+
+{{else}}
+
+<tr>
+	<td colspan="4"><h2><b>No hay juegos disponibles</b></h2></td>
+</tr>
+
+	{{/each}}

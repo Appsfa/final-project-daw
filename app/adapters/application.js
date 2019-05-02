@@ -1,7 +1,6 @@
 // import DS from 'ember-data';
 //
-// export default class AplicationAdapter extends DS.JSONAPIAdapter {
-//   host = "https://polar-basin-61192.herokuapp.com";
+// export default class ApplicationAdapter extends DS.JSONAPIAdapter {
 // }
 
 import ActiveModelAdapter from 'active-model-adapter';
