@@ -8,7 +8,7 @@ export default class AppGamesRoute extends Route {
   //
   model(){
 		return hash({
-
+      user: this.store.findAll('user'),
 			game: this.store.findAll('game')
 		});
   }

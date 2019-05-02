@@ -7,7 +7,10 @@ export default class AppGamesController extends Controller {
 		let x = this.store.createRecord("game");
 		x.save().then((data) => {
       console.log(data.code);
+      $("#bodyModalGame").html(`Juego ${data.code} creado`);
       $("#modalGame").modal('show');
     });
 	}
+
+  
 }

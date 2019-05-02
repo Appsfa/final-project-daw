@@ -1,2 +1,28 @@
 <!-- {{yield}} -->
-<h1>Header</h1>
+<!-- <LinkTo
+					@route="app.profile"
+					@model={{@data.user.id}}
+				>
+					{{@data.user.username}}
+				</LinkTo> -->
+<header class="d-none d-lg-block">
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <LinkTo class="navbar-brand" @route="app.index">RPSLS</LinkTo>
+  <div class="collapse navbar-collapse" id="navbarText">
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item active">
+        <LinkTo class="nav-link" @route="app.index">Home</LinkTo>
+      </li>
+      <li class="nav-item">
+        <LinkTo class="nav-link" @route="app.games">Games</LinkTo>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Log In</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Sign Up</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+</header>

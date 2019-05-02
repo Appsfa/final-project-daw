@@ -14,25 +14,30 @@
 
     {{content-for "head-footer"}}
   </head>
-  <body style="height: 100vh">
+  <body style="height: 100vh" class="position-relative">
     {{content-for "body"}}
 
     <!-- Modal -->
 <div class="modal fade" id="modalGame" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
+  <div class="modal-dialog modal-lg modal-dialog-centered rounded-sm" role="document">
     <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        ...
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
+      <div class="container-fluid">
+        <div class="row">
+
+          <div class="col-12 text-center pt-4 mb-3">
+            <h5><b id="bodyModalGame"></b></h5>
+          </div>
+
+          <div class="col-12">
+            <div class="container-fluid p-0">
+              <div class="row">
+                <a class="col-12 p-0 border-top text-center text-primary cursor-pointer py-2" data-dismiss="modal">
+                  <b>Aceptar</b>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
