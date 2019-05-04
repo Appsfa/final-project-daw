@@ -13,6 +13,7 @@ Router.map(function() {
     this.route('room', function() {
       this.route('game', {path: '/:game_id'});
     });
+    this.route('scores');
   });
 });
 

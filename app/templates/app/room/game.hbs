@@ -5,15 +5,50 @@
 <div class="container-fluid">
   <div class="row position-relative">
     <div class="col-12 text-center bg-blue pb-5 mb-4" style="height: 100vh">
-      <div class="container-fluid">
-        <div class="row">
+      <div class="container-fluid text-white pt-3 h-100">
+        <div class="row h-75">
+
+          <div class="col-12 mb-3 pt-5">
+            <h2>Code: <b>"{{this.model.game.code}}"</b></h2>
+            Number of players: {{this.model.game.total_users}}
+          </div>
 
           <div class="col-12">
-            {{#each this.model.plays as |play|}}
-              {{play.user.username}}
-            {{/each}}
+            <div class="container-fluid">
+              <div class="row">
+                {{#each this.model.plays as |play|}}
+                  <div class="col-6">
+                    <div class="container-fluid">
+                      <div class="row">
+                        {{log play.user.avatar}}
+                        <div class="col-12 mb-3">
+                          <img src="{{play.user.avatar}}">
+                        </div>
+
+                        <div class="col-12 mb-3">
+                          {{play.user.username}}
+                        </div>
+
+                        <!-- <div class="col-12 mb-3">
+                          {{play.user.email}}
+                        </div> -->
+
+                        <div class="col-12">
+                          <button class="btn-success btn shadow">Choose</button>
+                        </div>
+
+                      </div>
+                    </div>
+                  </div>
+                {{/each}}
+              </div>
+            </div>
           </div>
-          
+
+          <div class="col-12">
+            <h1><b>Vs</b></h1>
+          </div>
+
         </div>
       </div>
     </div>

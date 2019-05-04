@@ -1,5 +1,6 @@
 import Route from '@ember/routing/route';
 import { hash } from 'rsvp';
+// export { default } from 'ember-truth-helpers/helpers/equal';
 
 export default class AppRoomGameRoute extends Route {
   model(params){

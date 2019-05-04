@@ -1,25 +1,31 @@
-<div class="container-fluid bg-white py-3 d-block d-lg-none">
+<div class="container-fluid bg-white py-3 d-block d-lg-none border-top">
   <div class="row">
 
-    <div class="col text-center">
-      
-      Home
+    <LinkTo @route="app.scores" class="col text-center border-right text-black">
+      {{material-icon "list"}}
+      <small class="d-block">Scores</small>
+    </LinkTo>
+
+    <LinkTo @route="app.games" class="col text-center border-right text-black">
+      {{material-icon "videogame_asset"}}
+      <small class="d-block">Games</small>
+    </LinkTo>
+
+    <LinkTo @route="app.index" class="col text-center border-right text-black">
+      {{material-icon "view_module"}}
+      <small class="d-block">Enter PIN</small>
+    </LinkTo>
+
+    <div class="col text-center border-right">
+      {{material-icon "person"}}
+      <br>
+      <small class="d-block">Log In</small>
     </div>
 
     <div class="col text-center">
-      Games
-    </div>
-
-    <div class="col text-center">
-      Enter PIN
-    </div>
-
-    <div class="col text-center">
-      Log In
-    </div>
-
-    <div class="col text-center">
-      Sign Up
+      {{material-icon "edit"}}
+      <br>
+      <small class="d-block">Sign Up</small>
     </div>
   </div>
 </div>

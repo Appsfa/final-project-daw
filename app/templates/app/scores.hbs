@@ -1,7 +1,7 @@
 <HeaderProject/>
 <div class="container-fluid p-0">
   <div class="row position-relative">
-    <div class="col-12 text-center bg-blue pb-5 mb-2 p-0" style="height: 100%">
+    <div class="col-12 text-center bg-blue pb-5 mb-2 p-0" style="height: 100vh">
       <div class="container-fluid mt-0 mt-lg-3">
         <div class="row">
 
@@ -9,19 +9,17 @@
 
           </div>
 
-          <div class="col-12 col-sm-12 col-md-10 col-lg-8 mb-3 p-0">
-            <div class="table-responsive px-3">
+          <div class="col-12 col-sm-12 col-md-10 col-lg-8 mb-3">
+            <div class="table-responsive">
               <table class="table table-hover pt-0 bg-white mb-5 mb-lg-0">
                 <thead>
                   <tr>
-                    <th>Codigo</th>
-                    <th>Status</th>
-                    <th>Jugadores</th>
-                    <th>Actions</th>
+                    <th>User</th>
+                    <th>Score</th>
                   </tr>
                 </thead>
                 <tbody>
-                  <ShowGames @game={{model.game}}/>
+                  <ShowScores @user={{model.user}}/>
                 </tbody>
               </table>
             </div>
@@ -36,7 +34,6 @@
     </div>
 
     <div class="position-fixed col-12 text-right p-0" style="bottom: 0px; right: 0px">
-      <CreateGame @handleSubmit={{this.onSubmit}}/>
       <FooterProject/>
     </div>
   </div>
