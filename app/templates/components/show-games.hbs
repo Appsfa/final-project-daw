@@ -3,12 +3,12 @@
 
 		<tr>
       <td>{{game.code}}</td>
-      <td>{{game.status}}</td>
+      <td>{{if true 1 2}}</td>
       <td>{{game.total_users}}</td>
       <td class="d-flex justify-content-center">
 				<button class="btn btn-danger d-flex mx-1">Delete {{material-icon "delete"}}</button>
 				<button class="btn btn-info d-flex mx-1">Join {{material-icon "add"}}</button>
-				<button class="btn btn-success d-flex mx-1">Play! {{material-icon "play_arrow"}}</button>
+				<LinkTo @route="app.room.game" @model={{game.id}} @user={{model.play}} class="btn btn-success d-flex mx-1">Play! {{material-icon "play_arrow"}}</LinkTo>
 			</td>
     </tr>
 

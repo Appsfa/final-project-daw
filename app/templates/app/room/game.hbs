@@ -1,0 +1,26 @@
+<!-- <p>{{this.model.game.code}}</p>
+
+ -->
+<HeaderProject/>
+<div class="container-fluid">
+  <div class="row position-relative">
+    <div class="col-12 text-center bg-blue pb-5 mb-4" style="height: 100vh">
+      <div class="container-fluid">
+        <div class="row">
+
+          <div class="col-12">
+            {{#each this.model.plays as |play|}}
+              {{play.user.username}}
+            {{/each}}
+          </div>
+          
+        </div>
+      </div>
+    </div>
+
+    <div class="position-fixed col-12 text-right p-0" style="bottom: 0px; right: 0px">
+      <FooterProject/>
+    </div>
+
+  </div>
+</div>

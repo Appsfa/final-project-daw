@@ -9,7 +9,8 @@ export default class AppGamesRoute extends Route {
   model(){
 		return hash({
       user: this.store.findAll('user'),
-			game: this.store.findAll('game')
+			game: this.store.findAll('game'),
+      play: this.store.findAll('play'),
 		});
   }
   // model(){
