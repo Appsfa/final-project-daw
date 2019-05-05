@@ -17,6 +17,7 @@
                   <tr>
                     <th>Codigo</th>
                     <th>Status</th>
+                    <th>Winner</th>
                     <th>Jugadores</th>
                     <th>Actions</th>
                   </tr>
@@ -29,6 +30,7 @@
                         <td class="text-{{game.getColorStatus}} align-middle">
                   				<b>{{game.getStatus}}</b>
                   			</td>
+                        <td class="align-middle">{{game.winner_name}}</td>
                         <td class="align-middle">{{game.total_users}}</td>
                         <td class="d-flex justify-content-center">
                   				<!-- <button class="btn btn-danger d-flex mx-1">Delete {{material-icon "delete"}}</button> -->
@@ -39,10 +41,10 @@
                   			{{/if}}
 
                   			{{#if (eq game.status 3)}}
-                  			<button class="btn btn-success d-flex mx-1 disabled">Play! {{material-icon "play_arrow"}}</button>
+                        <LinkTo @route="app.room.game" @model={{game.id}} @user={{model.play}} class="btn btn-light d-flex mx-1">Results {{material-icon "done"}}</LinkTo>
                   				{{else}}
                   					{{#if (eq game.status 2)}}
-                  					<button class="btn btn-success d-flex mx-1 disabled">Play! {{material-icon "play_arrow"}}</button>
+                            <LinkTo @route="app.room.game" @model={{game.id}} @user={{model.play}} class="btn btn-success d-flex mx-1">Play! {{material-icon "play_arrow"}}</LinkTo>
                   						{{else}}
                   						<LinkTo @route="app.room.game" @model={{game.id}} @user={{model.play}} class="btn btn-success d-flex mx-1">Play! {{material-icon "play_arrow"}}</LinkTo>
                   					{{/if}}
