@@ -1,0 +1,39 @@
+<HeaderProject/>
+
+<div class="container-fluid">
+  <div class="row position-relative">
+    <div class="col-12 text-center bg-blue pb-5 mb-2 d-flex align-items-center" style="height: 100vh">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-sm-12 col-md-4 col-lg-5">
+          </div>
+
+          <div class="col-sm-12 col-md-4 col-lg-2">
+            {{log this.user_global}}
+            <form class="w-100" onsubmit={{action "onSubmit" preventDefault=true}}>
+              <div class="form-row">
+                <div class="form-group col-12 text-left">
+                  <label for="txtUser" class="text-white" style="font-size: 0.6rem; font-weight: bold">USER</label>
+                  <input type="text" class="form-control" id="txtUser" placeholder="User">
+                </div>
+
+                <div class="col-12">
+                  <button onsubmit={{action "onSubmit" preventDefault=true}} type="submit" class="btn btn btn-success shadow-lg w-100 border-light">Log In</button>
+                </div>
+              </div>
+            </form>
+          </div>
+
+          <div class="col-sm-12 col-md-4 col-lg-5">
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="position-fixed col-12 text-right p-0" style="bottom: 0px; right: 0px">
+      <FooterProject/>
+    </div>
+
+  </div>
+</div>

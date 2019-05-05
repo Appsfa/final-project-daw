@@ -11,5 +11,9 @@ export default class AppScoresRoute extends Route {
     return ashes;
   }
 
+  // score(user){
+  //   console.log(user.id);
+  // }
+
     // plays: this.store.query('play', {game_id: params.game_id})
 }

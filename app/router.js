@@ -14,6 +14,8 @@ Router.map(function() {
       this.route('game', {path: '/:game_id'});
     });
     this.route('scores');
+    this.route('login');
+    this.route('signup');
   });
 });
 

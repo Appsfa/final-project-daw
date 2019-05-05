@@ -1,3 +1,5 @@
+{{log this.user_id}}
+
 <div class="container-fluid bg-white py-3 d-block d-lg-none border-top">
   <div class="row">
 
@@ -16,16 +18,31 @@
       <small class="d-block">Enter PIN</small>
     </LinkTo>
 
-    <div class="col text-center border-right">
-      {{material-icon "person"}}
-      <br>
-      <small class="d-block">Log In</small>
-    </div>
+    {{#if (not-eq this.user_username "")}}
 
-    <div class="col text-center">
-      {{material-icon "edit"}}
-      <br>
-      <small class="d-block">Sign Up</small>
-    </div>
+      <LinkTo @route="app.login" class="col text-center border-right text-black">
+        {{material-icon "person"}}
+        <small class="d-block">{{this.user_username}}</small>
+      </LinkTo>
+
+      <LinkTo @route="app.login" class="col text-center text-black">
+        {{material-icon "exit_to_app"}}
+        <small class="d-block">Log Out</small>
+      </LinkTo>
+
+      {{else}}
+      <LinkTo @route="app.login" class="col text-center border-right text-black">
+        {{material-icon "person"}}
+        <small class="d-block">Log In</small>
+      </LinkTo>
+
+      <div class="col text-center">
+        {{material-icon "edit"}}
+        <br>
+        <small class="d-block">Sign Up</small>
+      </div>
+
+    {{/if}}
+
   </div>
 </div>

@@ -4,10 +4,13 @@ import { hash } from 'rsvp';
 
 export default class AppRoomGameRoute extends Route {
   model(params){
-    return hash({
+    let aux = hash({
       game: this.store.findRecord('game', params.game_id),
       plays: this.store.query('play', {game_id: params.game_id})
-    })
+    });
+
+
+    return aux;
   }
 
 }

@@ -5,6 +5,7 @@
 				>
 					{{@data.user.username}}
 				</LinkTo> -->
+        {{log this.user_id}}
 <header class="d-none d-lg-block">
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <LinkTo class="navbar-brand" @route="app.index">RPSLS</LinkTo>
@@ -19,12 +20,25 @@
       <li class="nav-item">
         <LinkTo class="nav-link" @route="app.scores">Scores</LinkTo>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Log In</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Sign Up</a>
-      </li>
+
+      {{#if (not-eq this.user_username "")}}
+
+        <li class="nav-item">
+          <LinkTo class="nav-link" @route="app.login">{{this.user_username}}</LinkTo>
+        </li>
+        <li class="nav-item">
+          <LinkTo class="nav-link" @route="app.login">Log Out</LinkTo>
+        </li>
+
+        {{else}}
+        <li class="nav-item">
+          <LinkTo class="nav-link" @route="app.login">Log In</LinkTo>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Sign Up</a>
+        </li>
+
+      {{/if}}
     </ul>
   </div>
 </nav>
