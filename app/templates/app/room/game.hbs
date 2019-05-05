@@ -10,8 +10,11 @@
         <div class="row h-75">
 
           <div class="col-12 mb-3 pt-5">
-            <h2>Code: <b>"{{this.model.game.id}}"</b></h2>
+            <h2>Code: <b>"{{this.model.game.code}}"</b></h2>
+            <h4>ID: <b>{{this.model.game.id}}</b></h4>
             Number of players: {{this.model.game.total_users}}
+            <br>
+            <b class="">{{this.model.game.getStatus}}</b>
           </div>
 
           <div class="col-12">
@@ -40,24 +43,50 @@
                               {{#if (eq this.model.game.status 3)}}
                                 <h3><b>{{play.getChoice}}</b></h3>
                               {{else}}
-                                <h3><b>READY!</b></h3>
+                                {{#if (eq this.model.game.status 2)}}
+                                  <h3><b>READY!</b></h3>
+                                  {{else}}
+                                  {{#if (eq this.model.game.total_users 2)}}
+                                  <div class="col-12 mb-3">
+                                    <button class="btn-success btn shadow" onclick={{action startGame this.model.game.id}}>Start game</button>
+                                  </div>
+                                  {{/if}}
+                                  <button class="btn-danger btn shadow" onclick={{action exitGame play.id}}>Exit game</button>
+                                {{/if}}
+
                               {{/if}}
                             </div>
                             {{else}}
-                            <div class="col-12 mb-4">
-                              <!-- 1: ROCK, 2: PAPER, 3: SCISSORS, 4: LIZARD, 5: SPOCK -->
-                              <select class="form-control" id="txtOption">
-                                <option value="">Choose option</option>
-                                <option value="1">Rock</option>
-                                <option value="2">Paper</option>
-                                <option value="3">Scissors</option>
-                                <option value="4">Lizard</option>
-                                <option value="5">Spock</option>
-                              </select>
-                            </div>
-                            <div class="col-12">
-                              <button class="btn-success btn shadow" onclick={{action chooseOption this.model.game.id play.id}}>Choose</button>
-                            </div>
+                              {{#if (eq this.model.game.status 2)}}
+                                <div class="col-12 mb-4">
+                                  <!-- 1: ROCK, 2: PAPER, 3: SCISSORS, 4: LIZARD, 5: SPOCK -->
+                                  <select class="form-control" id="txtOption">
+                                    <option value="">Choose option</option>
+                                    <option value="1">Rock</option>
+                                    <option value="2">Paper</option>
+                                    <option value="3">Scissors</option>
+                                    <option value="4">Lizard</option>
+                                    <option value="5">Spock</option>
+                                  </select>
+                                </div>
+                                <div class="col-12">
+                                  <button class="btn-success btn shadow" onclick={{action chooseOption this.model.game.id play.id}}>Choose</button>
+                                </div>
+
+                                {{else}}
+
+                                {{#if (eq this.model.game.status 1)}}
+                                  {{#if (eq this.model.game.total_users 2)}}
+                                  <div class="col-12 mb-3">
+                                    <button class="btn-success btn shadow" onclick={{action startGame this.model.game.id}}>Start game</button>
+                                  </div>
+                                  {{/if}}
+                                {{/if}}
+                                <div class="col-12">
+                                  <button class="btn-danger btn shadow" onclick={{action exitGame play.id}}>Exit game</button>
+                                </div>
+
+                              {{/if}}
                           {{/if}}
                           {{else}}
                           <div class="col-12 mb-3 text-white">

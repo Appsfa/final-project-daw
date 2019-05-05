@@ -21,4 +21,30 @@ export default class AppRoomGameController extends Controller {
     });
 
   }
+
+  @action exitGame(play){
+    console.log(play);
+    this.store.findRecord('play', play, { backgroundReload: false }).then(function(post) {
+      post.destroyRecord(); // => DELETE to /posts/2
+    });
+  }
+
+  @action startGame(game){
+    console.log(game);
+    $.ajax({
+      url: `https://polar-basin-61192.herokuapp.com/games/${game}/start`,
+      type: 'PUT',
+      dataType: 'JSON'
+    })
+    .done(function() {
+      location.reload();
+    })
+    .fail(function() {
+      console.log("error");
+    })
+    .always(function() {
+      console.log("complete");
+    });
+
+  }
 }
