@@ -15,6 +15,16 @@
             Number of players: {{this.model.game.total_users}}
             <br>
             <b class="">{{this.model.game.getStatus}}</b>
+            <br><br>
+            {{#if (eq this.model.game.status 3)}}
+              <div class="dropdown-divider"></div>
+              {{#if (not-eq this.model.game.winner_name null)}}
+                <small class="text-uppercase"><b>winner!</b></small>
+                <h1><b>{{this.model.game.winner_name}}</b></h1>
+                {{else}}
+                <h1><b>TIE</b></h1>
+              {{/if}}
+            {{/if}}
           </div>
 
           <div class="col-12">

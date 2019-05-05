@@ -32,6 +32,14 @@ export default class UserService extends Service {
     return "";
   }
 
+  // logOut(user){
+  //   this.setCookie("username", 0, 0);
+  //   this.setCookie("id", 0, 0);
+  //   this.setCookie("email", 0, 0);
+  //
+  //   // location.href = "/";
+  // }
+
   login(user){
     // this.setCookie("username", user, 1);
     var auxuser, auxid, auxemail

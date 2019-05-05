@@ -24,13 +24,20 @@
                 </thead>
                 <tbody>
                   {{#each model.game as |game|}}
-                  	<!-- {{log game.getStatus}} -->
                   		<tr>
                         <td class="align-middle">{{game.code}}</td>
                         <td class="text-{{game.getColorStatus}} align-middle">
                   				<b>{{game.getStatus}}</b>
                   			</td>
-                        <td class="align-middle">{{game.winner_name}}</td>
+                        <td class="align-middle">
+                          {{#if (eq game.status 3)}}
+                            {{#if (not-eq game.winner_name null)}}
+                              {{game.winner_name}}
+                              {{else}}
+                              TIE
+                            {{/if}}
+                          {{/if}}
+                        </td>
                         <td class="align-middle">{{game.total_users}}</td>
                         <td class="d-flex justify-content-center">
                   				<!-- <button class="btn btn-danger d-flex mx-1">Delete {{material-icon "delete"}}</button> -->

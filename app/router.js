@@ -16,6 +16,7 @@ Router.map(function() {
     this.route('scores');
     this.route('login');
     this.route('signup');
+    this.route('logout');
   });
 });
 

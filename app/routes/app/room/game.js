@@ -1,5 +1,6 @@
 import Route from '@ember/routing/route';
 import { hash } from 'rsvp';
+import {action} from "@ember/object";
 // export { default } from 'ember-truth-helpers/helpers/equal';
 
 export default class AppRoomGameRoute extends Route {
@@ -12,5 +13,21 @@ export default class AppRoomGameRoute extends Route {
 
     return aux;
   }
+
+  @action
+	willTransition () {
+		clearInterval(this.poll);
+	}
+
+	@action
+	didTransition () {
+		this.poll = setInterval(async () => {
+			//polling
+			return hash({
+				games: this.store.findAll('game'),
+				users: this.store.findAll('play')
+			})
+		}, 500);
+	}
 
 }
